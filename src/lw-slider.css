@@ -57,7 +57,6 @@
     animation-name: fadeOut;
     animation-duration: 2s;
     background-color: red;
-    /* height: 100%; */
 }
 
 .lw-slide-item.active {

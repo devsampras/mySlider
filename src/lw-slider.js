@@ -25,8 +25,6 @@ function changeSlideToNextHandler(slider) {
     }
 
     switchSlide(current,next);
-
-    
 }
 function changeSlideToPrevHandler(slider) {
 
