@@ -30,7 +30,7 @@
     border-radius: 50%;
     margin-right: 3px;
     margin-left: 3px;
-    text-indent: -999999px;
+    list-style: none;
     cursor: pointer;
     background-color: #5195c7;
     background-clip: padding-box;

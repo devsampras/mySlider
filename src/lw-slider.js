@@ -15,6 +15,8 @@ $.fn.extend({
         setInterval(function () { changeSlideToNextHandler(newSlider); }, $(this).attr("data-interval"));
     }
 });
+
+//used for right arrow
 function changeSlideToNextHandler(slider) {
 
     var current = slider.find(".lw-slide-item.active");
@@ -26,6 +28,8 @@ function changeSlideToNextHandler(slider) {
 
     switchSlide(current,next);
 }
+
+//used for left arrow
 function changeSlideToPrevHandler(slider) {
 
 var current = slider.find(".lw-slide-item.active");
@@ -39,6 +43,8 @@ switchSlide(current,prev);
 
 
 }
+
+//changes to slide by indicator index
 function selectedSlider(tergetIndic,slider){
     var current = slider.find(".lw-slide-item.active");
     
@@ -46,24 +52,33 @@ function selectedSlider(tergetIndic,slider){
     switchSlide($(current),$(next));
 }
 
+//the core: changes current slide with another 
+//(by default next slide)
 function switchSlide(current,next){
     var slider=current.closest(".lw-slider");
-    if(slider.hasClass("trans")) return;
+    if(slider.hasClass("trans")) {
+        return;
+    }
     slider.addClass("trans");
     toggleUlForSlide(slider, current);
     current.removeClass("active");
     toggleUlForSlide(slider, next);
 
     setTimeout(function () {
+        //end of out transition
         current.addClass("hidden");
         next.removeClass("hidden");
         next.addClass("active");
+        setTimeout(function(){
+            //end of in transition
         slider.removeClass("trans");
 
+        },2000)
     }, 2000)
 
-
 }
+
+//changes indicator using slide index
 function toggleUlForSlide(slider, slide) {
     var idxIndic = slide.index();
     var ul = slider.find(".indicators").children()[idxIndic];
