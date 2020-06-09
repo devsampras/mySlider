@@ -1,0 +1,1 @@
+uno slider che si capisce come funziona
