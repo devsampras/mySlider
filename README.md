@@ -2,7 +2,7 @@
 A simply and understandable slider.
 ## Usage
 If you just use
-```javascript
+```jQuery
 $("#your-slider-id").slider();
 ```
 in document ready or others it will work
