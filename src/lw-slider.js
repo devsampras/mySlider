@@ -1,6 +1,3 @@
-$(function () {
-    $("#centered").lwSlider();
-});
 $.fn.extend({
     lwSlider: function () {
         var newSlider = this;
